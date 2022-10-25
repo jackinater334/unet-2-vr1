@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class my_math : MonoBehaviour
 {
-    int num =1;
+    int num = -1;
     // Start is called before the first frame update
     void Start()
     {
