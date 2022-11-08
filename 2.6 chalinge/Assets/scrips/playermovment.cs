@@ -22,7 +22,13 @@ public class playermovment : MonoBehaviour
         yMovement = Input.GetAxis("Vertical");
         xMove = new Vector2(xMovement, yMovement);
         player.Translate(xMove * Time.deltaTime);
-        Vector2 flip = new Vector2(-1.0f, 1.0f);
-        transform.localScale *= flip;
+        if (Input.GetAxis("Horizontal")< 0)
+        {
+            player.localScale = new Vector3 (7, 7, 1);
+        }
+        if (Input.GetAxis ("Horizontal")< 0)
+        {
+            player.localScale = new Vector3(-7, 7, 1);
+        }
     }
 }
