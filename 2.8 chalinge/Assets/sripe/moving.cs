@@ -21,6 +21,8 @@ public class animasonsmoving : MonoBehaviour
 
     float yMovement;
 
+    public int Thrust = 200;
+
     void Start()
     {
         player = gameObject.transform;

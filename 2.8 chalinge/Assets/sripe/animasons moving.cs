@@ -7,7 +7,7 @@ public class moving : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D m_Rigidbody;
 
-    public float jumpForce = 20f;
+    public float thrust = 20f;
     int jumpsLeft;
 
     public Animator animator;
@@ -50,9 +50,9 @@ public class moving : MonoBehaviour
             player.localScale = new Vector3(-3, 3, 1);
         }
         animator.SetFloat("speed", Mathf.Abs(xMovement));
-        if (Input.GetKeyDown(KeyCode.z)||Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.Addforce(transform.up * jumpForce);
+            m_Rigidbody.AddForce(transform.up * thrust);
         }
 
 
