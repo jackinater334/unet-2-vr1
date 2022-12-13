@@ -8,7 +8,7 @@ public class moving : MonoBehaviour
 
 
 
-
+    public Animator animator;
 
 
     public int xspeed = 10;
@@ -35,6 +35,9 @@ public class moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        animator.SetFloat("Speed", Mathf.Abs(xMovement));
+        
         //bacic movement
         xMovement = Input.GetAxis("Horizontal");
 
@@ -61,8 +64,18 @@ public class moving : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.UpArrow))
             {
                 rb.AddForce(transform.up * Thrust);
+               
             }
         }
 
+
+        if (rb.velocity.y != 0)
+        {
+            animator.SetBool("Isjummping", true);
+        }
+        else
+        {
+            animator.SetBool("Isjummping", false);
+        }
     }
 }
